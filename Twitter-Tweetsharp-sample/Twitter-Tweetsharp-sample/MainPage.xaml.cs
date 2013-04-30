@@ -108,7 +108,7 @@ namespace Twitter_Tweetsharp_sample
             {
                              
                 //authorization complete - access tokens are now available
-                dispatchme.BeginInvoke(() => MessageBox.Show("Authentication successfull!"));
+                dispatchme.BeginInvoke(() => MessageBox.Show("Authentication completed!"));
                 //store the AccessToken and AccessTokenSecret in local static variables
                 TwitterVariables.AccessToken = atoken.Token;
                 TwitterVariables.AccessTokenSecret = atoken.TokenSecret;
