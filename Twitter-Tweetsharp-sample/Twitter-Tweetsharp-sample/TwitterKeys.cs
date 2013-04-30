@@ -7,8 +7,10 @@ namespace Twitter_Tweetsharp_sample
 {
    public class TwitterKeys
     {
-       public static string ConsumerKey = "cyrfP8C1NrjhkuS0TvZMig";
-       public static string ConsumerKeySecret = "FqFtyhYrpdrlItKcQ2uBBaKKclTeaWm3ovAO24hmVQ";
+       //fetch the following keys from dev.twitter.com
+
+       public static string ConsumerKey = "Enter Consumer Key here";
+       public static string ConsumerKeySecret = "Enter Consumer Secret Key here";
       
     }
 }
