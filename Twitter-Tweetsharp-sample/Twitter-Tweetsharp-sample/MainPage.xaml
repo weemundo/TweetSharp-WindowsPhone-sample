@@ -27,10 +27,11 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" Text="enter pin" VerticalAlignment="Top" Width="456"/>
-            <Button x:Name="tweetbtn" Content="Post Tweet" HorizontalAlignment="Left" Margin="99,367,0,0" VerticalAlignment="Top" Width="265" Click="tweetbtn_Click"/>
-            <Button x:Name="accesstokenbtn" Content="Get Access Token" HorizontalAlignment="Left" Margin="99,238,0,0" VerticalAlignment="Top" Width="265" Click="accesstokenbtn_Click"/>
-            <Button x:Name="requesttokenbtn" Content="Get Request Token" HorizontalAlignment="Left" Margin="99,121,0,0" VerticalAlignment="Top" Click="requesttokenbtn_Click"/>
+            <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" Text="enter twitter pin here" IsEnabled="False" VerticalAlignment="Top" Width="456" Margin="0,146,0,0"/>
+            <Button x:Name="tweetbtn" IsEnabled="False" Content="Post Tweet" HorizontalAlignment="Left" Margin="99,407,0,0" VerticalAlignment="Top" Width="265" Click="tweetbtn_Click"/>
+            <Button x:Name="accesstokenbtn" Content="Get Access Token" IsEnabled="False" HorizontalAlignment="Left" Margin="99,263,0,0" VerticalAlignment="Top" Width="265" Click="accesstokenbtn_Click"/>
+            <Button x:Name="requesttokenbtn" Content="Get Request Token"  HorizontalAlignment="Left" Margin="102,54,0,0" VerticalAlignment="Top" Click="requesttokenbtn_Click"/>
+            <Button Content="Reset Layout" HorizontalAlignment="Left" Margin="82,620,0,0" VerticalAlignment="Top" Width="282" Click="Button_Click_1"/>
         </Grid>
     </Grid>
  

@@ -47,6 +47,9 @@ namespace Twitter_Tweetsharp_sample
               var callback = new Action<OAuthRequestToken, TwitterResponse>(CallBackToken);
               //oob refers to PIN based authorization process
               service.GetRequestToken("oob", CallBackToken);
+              requesttokenbtn.IsEnabled = false;
+              accesstokenbtn.IsEnabled = true;
+              textbox1.IsEnabled = true;
               
         }
 
@@ -70,6 +73,8 @@ namespace Twitter_Tweetsharp_sample
 
         private void accesstokenbtn_Click(object sender, RoutedEventArgs e)
         {
+           
+
             //check if PIN has been entered or not by the user
             if (String.IsNullOrEmpty(textbox1.Text))
                 MessageBox.Show("Please enter PIN");
@@ -82,7 +87,9 @@ namespace Twitter_Tweetsharp_sample
                     //most important part: now that we have both requestToken and PIN, as stated originally
                     //we will now fetch AccessToken and AccessTokenSecret by using the PIN and request token
                     service.GetAccessToken(requestToken, textbox1.Text, CallBackVerifiedResponse);
-                 
+                    accesstokenbtn.IsEnabled = false;
+                    textbox1.IsEnabled = false;
+                    tweetbtn.IsEnabled = true;
 
                 }
                 catch
@@ -99,6 +106,7 @@ namespace Twitter_Tweetsharp_sample
             
          if (atoken != null)
             {
+                             
                 //authorization complete - access tokens are now available
                 dispatchme.BeginInvoke(() => MessageBox.Show("Authentication successfull!"));
                 //store the AccessToken and AccessTokenSecret in local static variables
@@ -122,7 +130,7 @@ namespace Twitter_Tweetsharp_sample
          private void tweetbtn_Click(object sender, RoutedEventArgs e)
          {
              //Post a tweet 
-             service.SendTweet(new SendTweetOptions { Status = "testing a tweetsharp WP sample. It works @weemundo! " }, (TwitterStatus status, TwitterResponse response) =>
+             service.SendTweet(new SendTweetOptions { Status = "Tweetsharp Oauth sample tweet via @weemundo" }, (TwitterStatus status, TwitterResponse response) =>
              {
                  if (response.StatusCode == HttpStatusCode.OK)
                  {  
@@ -137,6 +145,19 @@ namespace Twitter_Tweetsharp_sample
              }
              );
          }
+
+         private void Button_Click_1(object sender, RoutedEventArgs e)
+         {
+             //start from the very beginning at any point in inside the application
+
+             requesttokenbtn.IsEnabled = true;
+             accesstokenbtn.IsEnabled = false;
+             textbox1.IsEnabled = false;
+             tweetbtn.IsEnabled = false;
+             
+         }
+
+        
 
 
     }
