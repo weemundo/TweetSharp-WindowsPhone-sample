@@ -122,7 +122,7 @@ namespace Twitter_Tweetsharp_sample
          private void tweetbtn_Click(object sender, RoutedEventArgs e)
          {
              //Post a tweet 
-             service.SendTweet(new SendTweetOptions { Status = "testing my tweetsharp sample. please ignore." }, (TwitterStatus status, TwitterResponse response) =>
+             service.SendTweet(new SendTweetOptions { Status = "testing a tweetsharp WP sample. It works @weemundo! " }, (TwitterStatus status, TwitterResponse response) =>
              {
                  if (response.StatusCode == HttpStatusCode.OK)
                  {  
